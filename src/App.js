@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import Alunos from './Alunos'
+import {useState} from 'react'
+import UserProvider from './contexts/user'
 
 function App() {
+
+  let [nome,setNome] = useState('DaniSan'); // não precisa mais passar parametros por props
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <UserProvider>
+      <div>
+        <h1>
+          ESCOLA
+        </h1>
+        <hr/>
+        <Alunos/>
+      </div>
+    </UserProvider>
   );
 }
 
